@@ -4,34 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Laravel Homepage</title>
+    <title>Title and Detail Form</title>
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        /* Style for the floating button */
-        .add-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #28a745;
-            color: white;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            font-size: 2rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
+        body {
+            background-color: #f8f9fa;
         }
-        .add-button:hover {
-            background-color: #218838;
-            transform: scale(1.1);
+        .form-container {
+            margin-top: 50px;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
 <body>
+
+    <div class="container">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Notes App</a>
@@ -56,17 +47,36 @@
         </div>
     </nav>
 
-    <div class="container mt-5">
-        <h1>Welcome to Your Notes Application</h1>
-        <p>This is the homepage of your Notes app.</p>
+
+
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div >
+                    <h2 class="text-center mb-4">Add New Note</h2>
+
+                    <!-- Form Starts Here -->
+                    <form method="POST" action="{{ route('todo.store') }}">
+                        @csrf <!-- CSRF Token for Security -->
+                        <div class="mb-3">
+                            <label for="title" class="form-label">Title</label>
+                            <input type="text" class="form-control" id="title" name="title" placeholder="Enter task title">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="detail" class="form-label">Detail</label>
+                            <textarea class="form-control" id="detail" name="detail" rows="4" placeholder="Enter task details"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-success w-100">Add Task</button>
+                    </form>
+                    <!-- Form Ends Here -->
+
+                </div>
+            </div>
+        </div>
     </div>
-    <button type="button" class="btn btn-floating" aria-label="Add">
-    <a href="{{ route('todo.create') }}" class="add-button">
-        +
-    </a>
-    </button>
 
-
+    <!-- Bootstrap JS (optional) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

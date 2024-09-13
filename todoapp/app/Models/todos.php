@@ -11,4 +11,5 @@ class todos extends Model
         use HasFactory;
         protected $table='todos';
         protected $primary_key='id';
+        protected $fillable = ['title', 'detail'];
 }
