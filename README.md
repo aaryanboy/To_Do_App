@@ -13,8 +13,10 @@ so to run this app we have to follow some steps given below
 4. then we write" git clone https://github.com/aaryanboy/To_Do_App.git "
 5. then we " cd To_Do_App "
 6. " code ." to open vs code
-7. in vscode terminal we "cd todoapp"
-8. then we " php artisan serve "
+      also dont forget to start sql in xamps else there will be error
+8. in vscode terminal we "cd todoapp"
+9. then we " php artisan serve "
+
 
 then we get the link.....
 
