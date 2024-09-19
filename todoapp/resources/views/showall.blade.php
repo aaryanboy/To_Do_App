@@ -48,16 +48,27 @@
         <ul class="list-group">
             @foreach($tasks as $task)
                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                    <a href="{{ route('tasks.show', $task->id) }}">
+                   <!-- this is title -->
                         {{ $task->title }}
-                    </a>
+                
 
-                    <!-- Delete Button -->
-                    <form action="{{ route('tasks.destroy', $task->id) }}" method="POST" style="display:inline;">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-                    </form>
+
+                    <div class="button-group">
+                        <!-- open button -->
+                        <form action="{{ route('tasks.show', $task->id) }}"  style="display:inline;">
+                        
+                            <button type="submit" class="btn btn-primary btn-sm">Open</button>
+                        </form>
+
+
+                        <!-- Delete Button -->
+                        <form action="{{ route('tasks.destroy', $task->id) }}" method="POST" style="display:inline;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                        </form>
+                
+                </div>
                 </li>
             @endforeach
         </ul>

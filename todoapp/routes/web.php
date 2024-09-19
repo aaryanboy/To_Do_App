@@ -23,6 +23,9 @@ Route::get('/tasks', [todosController::class, 'showall'])->name('tasks.index'); 
 Route::get('/tasks/{id}', [todosController::class, 'show'])->name('tasks.show'); // Display task details by ID
 Route::delete('/tasks/{id}', [todosController::class, 'destroy'])->name('tasks.destroy');// Route to handle task deletion
 
+Route::put('/tasks/{task}', [todosController::class, 'update'])->name('tasks.update');// edit in show page
+
+
 
 
 

@@ -57,4 +57,27 @@ class todosController extends Controller
         // Redirect back to the tasks list with a success message
         return redirect()->route('tasks.index')->with('success', 'Task deleted successfully!');
     }
+
+    public function update(Request $request, todos $task)
+{
+    // Validate the incoming data
+    $request->validate([
+        'detail' => 'required|string|max:255',
+    ]);
+
+    // Update the task with the new description
+    $task->update([
+        'detail' => $request->input('detail'),
+    ]);
+
+    // Redirect back to the task detail page with a success message
+    return redirect()->route('tasks.show', $task->id)
+                     ->with('success', 'Task updated successfully');
+}
+
+
+
+
+
+
 }
