@@ -1,5 +1,7 @@
 # To_Do_App
 
+a dynamic todolist app im making as a side project, to leard database and authentication. if u guys have any problems or errors. please inform me im open to listen and change
+
 in laravel php.....
 
 there is .env file on github too but in real app that will not be there as it will have sensative informations like passwords ,,...
